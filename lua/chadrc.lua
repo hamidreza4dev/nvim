@@ -5,7 +5,8 @@
 local M = {}
 
 M.ui = {
-  theme = "rxyhn",
+  theme = "yoru",
+  transparency = true,
 
   -- hl_override = {
   -- 	Comment = { italic = true },
@@ -13,8 +14,36 @@ M.ui = {
   -- },
 }
 
-M.plugins = "plugins"
+-- M.disabled = {
+--   n = {
+--     ["<C-h>"] = "",
+--     ["<C-l>"] = "",
+--     ["<C-j>"] = "",
+--     ["<C-k>"] = "",
+--     ["gr"] = "",
+--   },
+--   i = {
+--     ["<C-h>"] = "",
+--     ["<C-l>"] = "",
+--     ["<C-j>"] = "",
+--     ["<C-k>"] = "",
+--   },
+-- }
 
-require "configs.nvim-tree"
+M.disabled = {
+  n = {
+    ["gd"] = "",
+    ["gr"] = "",
+  },
+}
+
+M.lspoveride = {
+  n = {
+    ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "definitions" },
+    ["gr"] = { "<cmd> Telescope lsp_references <CR>", "references" },
+  },
+}
+
+M.plugins = "plugins"
 
 return M
